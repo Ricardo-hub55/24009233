@@ -1,1 +1,34 @@
-Teste 1
+Exercicio 2 -Caso 1 
+
+#include <stdio.h>
+
+int main() {
+    int numVisitantes;
+
+    // Solicita ao recepcionista o número de visitantes
+    printf("Digite o número de visitantes que entraram na empresa hoje: ");
+    scanf("%d", &numVisitantes);
+
+    // Exibe a confirmação
+    printf("Número de visitantes registrado com sucesso! Hoje, %d visitantes entraram na empresa.\n", numVisitantes);
+
+    return 0;
+}
+
+
+Caso 2
+
+#include <stdio.h>
+
+int main() {
+    int numVisitantes;
+
+    // Solicita ao recepcionista o número de visitantes
+    printf("Digite o número de visitantes que entraram na empresa hoje: ");
+    scanf("%d", &numVisitantes);
+
+    // Exibe a confirmação
+    printf("Número de visitantes registrado com sucesso! Hoje, %d visitantes entraram na empresa.\n", numVisitantes);
+
+    return 0;
+}
