@@ -1,0 +1,223 @@
+Exercicio 1- Erros comuns em C
+
+a-)#include <iostream>
+using namespace std;
+
+int main() {
+    unsigned long long int n = 4000000000;
+    cout << n << endl;
+    return 0;
+}
+
+b-)#include <iostream>
+using namespace std;
+
+int main() {
+    int a;
+    cout << a << endl;
+    return 0;
+}
+
+c-)#include <iostream>
+using namespace std;
+
+int main() {
+    cout << 42 << endl;
+    return 0;
+}
+
+d-)#include <iostream>
+using namespace std;
+
+int main() {
+    int a;
+    cin >> a;
+    cout << a << endl;
+    return 0;
+}
+
+Exercicio 2 - Variaveis 
+
+a-)#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << c << " " << b << " " << a << endl;
+    return 0;
+}
+
+b-)#include <iostream>
+using namespace std;
+
+int main() {
+    string nome;
+    cout << "Olá eu sou o Nº 1, como é seu nome?" << endl;
+    cin >> nome;
+    cout << "Bem-vindo ao clube " << nome << "!" << endl;
+    return 0;
+}
+
+c-)#include <iostream>
+using namespace std;
+
+int main() {
+    string nome;
+    int idade;
+    cout << "Digite seu nome e idade: ";
+    cin >> nome >> idade;
+    cout << nome << " viveu aproximadamente " << idade * 365 << " dias." << endl;
+    return 0;
+}
+
+d-)#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double raio;
+    cout << "Digite o raio do círculo: ";
+    cin >> raio;
+    cout << "A área é " << M_PI * pow(raio, 2) << endl;
+    return 0;
+}
+
+e-)#include <iostream>
+using namespace std;
+
+int main() {
+    double largura, altura, area, litros;
+    cout << "Digite a largura e altura da parede (em metros): ";
+    cin >> largura >> altura;
+    area = largura * altura;
+    litros = (area * 0.3) / 2;
+    cout << "Você precisará de " << ceil(litros) << " latas de tinta." << endl;
+    return 0;
+}
+
+f-)#include <iostream>
+using namespace std;
+
+int main() {
+    double f, c;
+    cout << "Digite a temperatura em Farenheit: ";
+    cin >> f;
+    c = (5.0/9.0) * (f - 32);
+    cout << "A temperatura em Celsius é: " << c << endl;
+    return 0;
+}
+
+g-)#include <iostream>
+using namespace std;
+
+int main() {
+    double p, v, t, m;
+    cout << "Digite a pressão, volume e temperatura do pneu: ";
+    cin >> p >> v >> t;
+    m = (p * v) / (0.37 * (t + 460));
+    cout << "A massa de ar é: " << m << endl;
+    return 0;
+}
+
+h-)#include <iostream>
+using namespace std;
+
+int main() {
+    int a1, r, n;
+    cout << "Digite o primeiro termo, a razão e o número de termos: ";
+    cin >> a1 >> r >> n;
+    int an = a1 + (n - 1) * r;
+    cout << "O " << n << "º termo da PA é: " << an << endl;
+    return 0;
+}
+
+i-)#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double a, b, c, delta, x1, x2;
+    cout << "Digite os coeficientes a, b e c da equação: ";
+    cin >> a >> b >> c;
+    delta = b*b - 4*a*c;
+    if (delta >= 0) {
+        x1 = (-b + sqrt(delta)) / (2 * a);
+        x2 = (-b - sqrt(delta)) / (2 * a);
+        cout << "As raízes são: " << x1 << " e " << x2 << endl;
+    } else {
+        cout << "A equação não tem raízes reais." << endl;
+    }
+    return 0;
+}
+
+j-)#include <iostream>
+using namespace std;
+
+int main() {
+    int n1, n10, n50, n100;
+    cout << "Digite a quantidade de notas de 1, 10, 50 e 100 reais: ";
+    cin >> n1 >> n10 >> n50 >> n100;
+    int total = n1 * 1 + n10 * 10 + n50 * 50 + n100 * 100;
+    cout << "O valor total é: R$ " << total << endl;
+    return 0;
+}
+
+L-)#include <iostream>
+using namespace std;
+
+int main() {
+    int valor;
+    cout << "Digite o valor total em dinheiro: ";
+    cin >> valor;
+    
+    int n100 = valor / 100;
+    valor %= 100;
+    
+    int n50 = valor / 50;
+    valor %= 50;
+    
+    int n10 = valor / 10;
+    valor %= 10;
+    
+    int n5 = valor / 5;
+    valor %= 5;
+    
+    int n1 = valor;
+
+    cout << "Notas de 100: " << n100 << endl;
+    cout << "Notas de 50: " << n50 << endl;
+    cout << "Notas de 10: " << n10 << endl;
+    cout << "Notas de 5: " << n5 << endl;
+    cout << "Notas de 1: " << n1 << endl;
+
+    return 0;
+}
+
+Desafio - Calculo do Dividend Yield
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double preco1 = 24.13, preco2 = 11.00, preco3 = 38.65;
+    double div1 = 17.00, div2 = 35.00, div3 = 25.00;
+    double aporte;
+    
+    cout << "Digite o valor que deseja investir (R$ 1000,00): ";
+    cin >> aporte;
+    
+    int qtd1 = aporte / preco1;
+    int qtd2 = aporte / preco2;
+    int qtd3 = aporte / preco3;
+    
+    double dy1 = (div1 / preco1) * 100;
+    double dy2 = (div2 / preco2) * 100;
+    double dy3 = (div3 / preco3) * 100;
+    
+    cout << "Dividend Yield Ação 1: " << dy1 << "%" << endl;
+    cout << "Dividend Yield Ação 2: " << dy2 << "%" << endl;
+    cout << "Dividend Yield Ação 3: " << dy3 << "%" << endl;
+
+    return 0;
+}
