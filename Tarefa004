@@ -1,0 +1,234 @@
+Propostas de exercicios_Tarefa 004
+
+exercicio 1
+#include <stdio.h>
+
+int main() {
+    float temperatura;
+
+    do {
+        printf("Digite a temperatura atual (em Celsius): ");
+        scanf("%f", &temperatura);
+
+        if (temperatura < 20.0 || temperatura > 25.0) {
+            printf("ALERTA: Temperatura fora do intervalo seguro (20°C - 25°C)!\n");
+        } else {
+            printf("Temperatura dentro do intervalo seguro.\n");
+        }
+    } while (1); // Programa continua rodando para simular monitoramento constante
+
+    return 0;
+}
+
+exercicio 2
+#include <stdio.h>
+
+int main() {
+    int combustivel;
+
+    do {
+        printf("Digite o nível de combustível atual (em %%): ");
+        scanf("%d", &combustivel);
+
+        if (combustivel < 15) {
+            printf("ALERTA: Nível de combustível abaixo de 15%%! Recarregue o veículo.\n");
+        } else if (combustivel == 100) {
+            printf("Combustível cheio (100%%). Monitoramento concluído.\n");
+            break;
+        } else {
+            printf("Nível de combustível aceitável.\n");
+        }
+    } while (1);
+
+    return 0;
+}
+
+exercicio 3
+#include <stdio.h>
+
+int main() {
+    int passos = 0, entrada;
+
+    while (passos < 10000) {
+        printf("Digite o número de passos dados: ");
+        scanf("%d", &entrada);
+        passos += entrada;
+
+        printf("Passos totais: %d\n", passos);
+        if (passos >= 10000) {
+            printf("Parabéns! Você atingiu sua meta diária de 10.000 passos!\n");
+        }
+    }
+
+    return 0;
+}
+
+exercicio 4
+#include <stdio.h>
+
+int main() {
+    float deposito;
+
+    do {
+        printf("Digite o valor do depósito inicial: R$ ");
+        scanf("%f", &deposito);
+
+        if (deposito < 500.00) {
+            printf("Erro: O depósito mínimo para abrir a conta é R$ 500,00.\n");
+        } else {
+            printf("Depósito aceito! Conta criada com sucesso.\n");
+            break;
+        }
+    } while (1);
+
+    return 0;
+}
+
+}
+
+
+Exercício 1 (do-while)
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char comando[10];
+    int x = 0, y = 0;
+
+    do {
+        printf("Digite o comando (frente, tras, esquerda, direita, sair): ");
+        scanf("%s", comando);
+
+        if (strcmp(comando, "frente") == 0) y++;
+        else if (strcmp(comando, "tras") == 0) y--;
+        else if (strcmp(comando, "esquerda") == 0) x--;
+        else if (strcmp(comando, "direita") == 0) x++;
+        else if (strcmp(comando, "sair") != 0) printf("Comando inválido!\n");
+
+        printf("Posição atual: (%d, %d)\n", x, y);
+    } while (strcmp(comando, "sair") != 0);
+
+    printf("Programa encerrado.\n");
+    return 0;
+}
+2-)import random
+
+def leitura_sensores():
+    print("Iniciando leitura do sensor. Digite 'parar' para encerrar.")
+    
+    while True:
+        comando = input("Digite 'ler' para medir ou 'parar' para encerrar: ").lower()
+        if comando == 'parar':
+            print("Leitura encerrada.")
+            break
+        elif comando == 'ler':
+            distancia = random.uniform(5, 50)  # Simula leituras de 5 cm a 50 cm
+            print(f"Distância medida: {distancia:.2f} cm")
+            if distancia < 10:
+                print("Distância menor que 10 cm registrada. Encerrando.")
+                break
+        else:
+            print("Comando inválido!")
+
+3-)def controle_atuacao():
+    while True:
+        print("Selecione uma ação: 1. Ligar lâmpada, 2. Tocar som, 3. Mover braço, 4. Sair")
+        acao = input("Escolha: ").strip()
+        if acao == '1':
+            print("Lâmpada ligada.")
+        elif acao == '2':
+            print("Som tocado.")
+        elif acao == '3':
+            print("Braço movido.")
+        elif acao == '4':
+            print("Encerrando controle de atuação.")
+            break
+        else:
+            print("Comando inválido!")
+
+4-)def monitoramento_bateria():
+    bateria = 100  # Simula o nível de bateria
+    while bateria > 0:
+        print(f"Nível atual da bateria: {bateria}%")
+        if bateria <= 20:
+            print("Aviso: Bateria baixa! Recarregue o robô.")
+        bateria -= random.randint(5, 15)  # Simula consumo
+        if input("Digite 'recarregar' para recarregar ou Enter para continuar: ").lower() == 'recarregar':
+            bateria = 100
+            print("Bateria recarregada.")
+
+5-)def navegacao_autonoma():
+    x, y = 0, 0
+    print("Controle o robô em um grid 5x5 (cima, baixo, esquerda, direita). Digite 'sair' para encerrar.")
+    
+    while True:
+        comando = input("Comando: ").lower()
+        if comando == 'sair':
+            print(f"Posição final: ({x}, {y})")
+            break
+        elif comando == 'cima':
+            if y < 5:
+                y += 1
+        elif comando == 'baixo':
+            if y > 0:
+                y -= 1
+        elif comando == 'esquerda':
+            if x > 0:
+                x -= 1
+        elif comando == 'direita':
+            if x < 5:
+                x += 1
+        else:
+            print("Comando inválido!")
+        print(f"Posição atual: ({x}, {y})")
+
+
+6-)def menu_principal():
+    while True:
+        print("""
+        Escolha uma funcionalidade:
+        1. Controle de Movimento
+        2. Leitura de Sensores de Distância
+        3. Controle de Atuação
+        4. Monitoramento de Bateria
+        5. Navegação Autônoma
+        6. Sair
+        """)
+        escolha = input("Digite sua escolha: ").strip()
+        if escolha == '1':
+            controle_movimento()
+        elif escolha == '2':
+            leitura_sensores()
+        elif escolha == '3':
+            controle_atuacao()
+        elif escolha == '4':
+            monitoramento_bateria()
+        elif escolha == '5':
+            navegacao_autonoma()
+        elif escolha == '6':
+            print("Encerrando o programa.")
+            break
+        else:
+            print("Opção inválida!")
+
+ARDUINO
+int ledPins[] = {2, 3, 4, 5};
+void setup() {
+    Serial.begin(9600);
+    for (int i = 0; i < 4; i++) {
+        Serial.println(ledPins[i]);
+    }
+}
+void loop() {}
+
+int somaTemperaturas = 0;
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 5; j++) {
+        somaTemperaturas += ambientData[i][j];
+    }
+}
+float media = somaTemperaturas / 15.0;
+Serial.println(media);
+
+
